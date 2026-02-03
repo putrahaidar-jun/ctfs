@@ -16,22 +16,21 @@ export default function UserProfilePage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Redirect if trailing ? in URL (e.g. /user/siapa%20ya?)
+  // Redirect if trailing ? in URL
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.location.search === '?' && window.location.hash === '') {
-      // Remove trailing ? and reload
+    if (
+      typeof window !== 'undefined' &&
+      window.location.search === '?' &&
+      window.location.hash === ''
+    ) {
       const cleanUrl = window.location.pathname
       window.history.replaceState({}, '', cleanUrl)
     }
   }, [])
 
+  // ✅ FIX DI SINI (HANYA HAPUS CEK !user)
   useEffect(() => {
     const fetchData = async () => {
-      if (!user) {
-        setLoading(false)
-        return
-      }
-
       const username = decodeURIComponent(params.username as string)
 
       try {
@@ -53,30 +52,30 @@ export default function UserProfilePage() {
     }
 
     fetchData()
-  }, [user, params])
+  }, [params])
 
   // Tunggu authContext
-  if (authLoading) return <Loader fullscreen color="text-orange-500" />
-
-  // Redirect if not logged in
-  if (!user) {
-    router.push('/login')
-    return null
+  if (authLoading) {
+    return <Loader fullscreen color="text-orange-500" />
   }
 
-  // If still loading
+  // ❌ JANGAN redirect login di profile publik
+  // if (!user) {
+  //   router.push('/login')
+  //   return null
+  // }
+
   if (loading) {
     return <Loader fullscreen color="text-orange-500" />
   }
 
-  // If error / user not found
   if (error) {
     return (
       <div className="h-[calc(100vh-64px)] flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <div className="w-full max-w-md bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 text-center">
           <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Oops!</h1>
           <p className="mt-2 text-gray-600 dark:text-gray-300">
-            {error || "Something went wrong."}
+            {error || 'Something went wrong.'}
           </p>
           <button
             onClick={() => router.push('/challenges')}
