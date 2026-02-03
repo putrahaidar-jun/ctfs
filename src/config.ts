@@ -1,8 +1,8 @@
 export const APP = {
-  shortName: 'FGTE',
+  shortName: 'W2G',
   fullName: 'CTFS Platform',
   description: 'Aplikasi CTF minimalis dengan Next.js dan Supabase',
-  flagFormat: 'FGTE{your_flag_here}',
+  flagFormat: 'W2G{your_flag_here}',
   year: new Date().getFullYear(),
 
   challengeCategories: [
