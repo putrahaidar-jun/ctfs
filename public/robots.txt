@@ -4,3 +4,4 @@ Sitemap: https://ctf.putrahaidar.my.id/sitemap.xml
 
 # HINT: rahasia ada di subdomain berikut
 # flag.ctf.putrahaidar.my.id
+    
