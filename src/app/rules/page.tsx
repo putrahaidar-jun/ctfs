@@ -131,3 +131,4 @@ export default function RulesPage() {
     </div>
   )
 }
+console.log("PAYAS DEBUG 🔥");
