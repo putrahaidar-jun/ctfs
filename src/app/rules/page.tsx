@@ -117,7 +117,7 @@ export default function RulesPage() {
         </motion.div>
 
         <p className="text-gray-50 dark:text-gray-900">
-          RkdURXtZb3VfSGF2ZV9BY2NlcHRlZF9BbGxfUnVsZXNfQW5kX0V0aGljc30=
+          VzJHe1lvdV9IYXZlX0FjY2VwdGVkX0FsbF9SdWxlc19BbmRfRXRoaWNzfQ==
         </p>
 
         <div className="w-full max-w-3xl mt-2 flex justify-center">
