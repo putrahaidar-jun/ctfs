@@ -1,8 +1,8 @@
 export const APP = {
-  shortName: 'W2G',
+  shortName: 'Prx',
   fullName: 'CTFS Platform',
   description: 'Aplikasi CTF minimalis dengan Next.js dan Supabase',
-  flagFormat: 'W2G{your_flag_here}',
+  flagFormat: 'Prx{your_flag_here}',
   year: new Date().getFullYear(),
 
   challengeCategories: [
