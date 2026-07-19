@@ -99,19 +99,19 @@ export default function InfoPage() {
     }
   }, [])
 
-  if (loading) return <Loader fullscreen color="text-orange-500" />;
+  if (loading) return <Loader fullscreen color="text-[#4318F0]" />;
 
   return (
     <div className="flex flex-col min-h-[calc(100lvh-60px)] bg-gray-50/100 dark:bg-gray-900/100 relative overflow-hidden">
       <main className="flex-1 flex flex-col items-center justify-center px-6 text-center">
         {/* Decorative background shapes */}
-        <div className="absolute -top-32 -right-32 w-[28rem] h-[28rem] bg-orange-100 dark:bg-orange-900 rounded-full blur-3xl opacity-40 animate-pulse" />
-        <div className="absolute -bottom-32 -left-32 w-[28rem] h-[28rem] bg-orange-200 dark:bg-orange-800 rounded-full blur-3xl opacity-30 animate-pulse" />
+        <div className="absolute -top-32 -right-32 w-[28rem] h-[28rem] bg-[#27A6F5]/15 dark:bg-[#4318F0]/90 rounded-full blur-3xl opacity-40 animate-pulse" />
+        <div className="absolute -bottom-32 -left-32 w-[28rem] h-[28rem] bg-[#27A6F5]/25 dark:bg-[#4318F0]/80 rounded-full blur-3xl opacity-30 animate-pulse" />
 
         {/* HERO */}
         <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} layout>
           <h1 className="text-5xl font-extrabold tracking-tight">
-            <span className="text-orange-600 dark:text-orange-400 drop-shadow-lg">CTF</span><span className="text-orange-500">:S</span>
+            <span className="text-[#4318F0] dark:text-[#27A6F5] drop-shadow-lg">CTF</span><span className="text-[#4318F0]">:S</span>
           </h1>
 
           <p className="mt-2 text-gray-400">Community-driven Capture The Flag platform</p>
@@ -135,9 +135,9 @@ export default function InfoPage() {
                 href={link.href}
                 target="_blank"
                 rel="noopener"
-                className="px-4 py-2 border border-gray-400 dark:border-orange-700 rounded-md font-mono text-sm flex items-center transition
-                  text-orange-600 dark:text-orange-400
-                  hover:border-orange-500 hover:text-orange-500 dark:hover:text-orange-300"
+                className="px-4 py-2 border border-gray-400 dark:border-[#4318F0] rounded-md font-mono text-sm flex items-center transition
+                  text-[#4318F0] dark:text-[#27A6F5]
+                  hover:border-[#4318F0] hover:text-[#4318F0] dark:hover:text-[#27A6F5]/60"
               >
                 {icon} {link.name}
               </a>
@@ -168,7 +168,7 @@ export default function InfoPage() {
                     <ProfileAvatar username={username} />
                     <span
                       className="text-xs font-mono text-gray-300
-                             group-hover:text-orange-400 transition"
+                             group-hover:text-[#27A6F5] transition"
                     >
                       {username}
                     </span>
@@ -194,7 +194,7 @@ export default function InfoPage() {
                     <ProfileAvatar username={username} />
                     <span
                       className="text-xs font-mono text-gray-300
-                             group-hover:text-orange-400 transition"
+                             group-hover:text-[#27A6F5] transition"
                     >
                       {username}
                     </span>
@@ -216,10 +216,10 @@ export default function InfoPage() {
             </div>
             {repoStats && (
               <div className="flex items-center gap-2 text-xs text-gray-500">
-                <a href={APP.links.github} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-orange-500">
+                <a href={APP.links.github} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-[#4318F0]">
                   <Star size={14} className="text-yellow-500" /> {repoStats.stars}
                 </a>
-                <a href={APP.links.github} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-orange-500">
+                <a href={APP.links.github} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-[#4318F0]">
                   <GitBranch size={14} className="text-gray-500" /> {repoStats.forks}
                 </a>
               </div>
@@ -227,13 +227,13 @@ export default function InfoPage() {
           </div>
           <div className="text-xs font-mono text-gray-500 flex items-center gap-1 mt-1">
             <ScrollText size={15} className="mr-1" />
-            <span>Licensed under <a href={`${APP.links.github}/blob/main/LICENSE` || "https://www.apache.org/licenses/LICENSE-2.0"} target="_blank" rel="noopener" className="underline hover:text-orange-500">Apache 2.0</a></span>
+            <span>Licensed under <a href={`${APP.links.github}/blob/main/LICENSE` || "https://www.apache.org/licenses/LICENSE-2.0"} target="_blank" rel="noopener" className="underline hover:text-[#4318F0]">Apache 2.0</a></span>
           </div>
 
           {/* Change Log */}
           <div className="text-xs font-mono text-gray-500 flex items-center gap-1 mt-1">
             <ListOrdered size={15} className="mr-1" />
-            <span>See the <a href={`${APP.links.github}/blob/main/CHANGELOG.md` || '#'} target="_blank" rel="noopener" className="underline hover:text-orange-500">Change Log</a></span>
+            <span>See the <a href={`${APP.links.github}/blob/main/CHANGELOG.md` || '#'} target="_blank" rel="noopener" className="underline hover:text-[#4318F0]">Change Log</a></span>
           </div>
         </div>
       </main>

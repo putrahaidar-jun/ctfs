@@ -43,7 +43,7 @@ export default function ScoreboardAllPage() {
     fetchData()
   }, [user])
 
-  if (authLoading) return <Loader fullscreen color="text-orange-500" />
+  if (authLoading) return <Loader fullscreen color="text-[#4318F0]" />
   if (!user) return null
 
   return (
@@ -60,7 +60,7 @@ export default function ScoreboardAllPage() {
 
         {loading ? (
           <div className="flex justify-center py-16">
-            <Loader fullscreen color="text-orange-500" />
+            <Loader fullscreen color="text-[#4318F0]" />
           </div>
         ) : (
           <motion.div

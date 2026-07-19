@@ -194,7 +194,7 @@ export default function UserProfile({
       <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Kondisi: Loader */}
         {isLoading && (
-          <Loader fullscreen color="text-orange-500" />
+          <Loader fullscreen color="text-[#4318F0]" />
         )}
 
         {/* Kondisi: Error */}
@@ -238,7 +238,7 @@ export default function UserProfile({
                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white truncate whitespace-nowrap max-w-[160px] sm:max-w-xs block" title={userDetail.username}>
                       {userDetail.username}
                     </h1>
-                    <p className="text-lg text-gray-500 dark:text-gray-300 mt-1">Score: <span className="font-semibold text-orange-600 dark:text-orange-400">{userDetail.score}</span></p>
+                    <p className="text-lg text-gray-500 dark:text-gray-300 mt-1">Score: <span className="font-semibold text-[#4318F0] dark:text-[#27A6F5]">{userDetail.score}</span></p>
                     {/* BADGES */}
                     <div className="flex flex-wrap gap-2 mt-2">
                       {getUserBadges(userDetail.rank, firstBloodIds.length, solvedChallenges.length).map((badge, idx) => (
@@ -445,7 +445,7 @@ export default function UserProfile({
                 'red': 'bg-red-500 dark:bg-red-400',
                 'purple': 'bg-purple-500 dark:bg-purple-400',
                 'blue': 'bg-blue-500 dark:bg-blue-400',
-                'orange': 'bg-orange-500 dark:bg-orange-400',
+                'orange': 'bg-[#4318F0] dark:bg-[#27A6F5]',
                 'pink': 'bg-pink-500 dark:bg-pink-400',
               }
 
@@ -660,7 +660,7 @@ export default function UserProfile({
                 <div className="p-0">
                   {loadingUnsolved ? (
                     <div className="flex justify-center py-12">
-                      <Loader color="text-orange-500" />
+                      <Loader color="text-[#4318F0]" />
                     </div>
                   ) : unsolvedChallenges.length === 0 ? (
                     <div className="text-center py-12 text-gray-500 dark:text-gray-400">

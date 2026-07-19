@@ -338,7 +338,7 @@ export default function AdminPage() {
   const updateAttachment = (i: number, field: keyof Attachment, v: string) => setFormData(prev => ({ ...prev, attachments: prev.attachments.map((a, idx) => idx === i ? { ...a, [field]: v } : a) }))
   const removeAttachment = (i: number) => setFormData(prev => ({ ...prev, attachments: prev.attachments.filter((_, idx) => idx !== i) }))
 
-  if (loading) return <Loader fullscreen color="text-orange-500" />
+  if (loading) return <Loader fullscreen color="text-[#4318F0]" />
   if (!user) return null
 
   return (

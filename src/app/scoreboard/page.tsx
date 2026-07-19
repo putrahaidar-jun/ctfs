@@ -83,7 +83,7 @@ export default function ScoreboardPage() {
   }, [user, firstBloodMode])
 
   // tunggu authContext
-  if (authLoading) return <Loader fullscreen color="text-orange-500" />
+  if (authLoading) return <Loader fullscreen color="text-[#4318F0]" />
   // do not render if not logged in (so redirect can happen)
   if (!user) return null
 
@@ -118,7 +118,7 @@ export default function ScoreboardPage() {
         </div>
         {loading ? (
           <div className="flex justify-center py-16">
-            <Loader fullscreen color="text-orange-500" />
+            <Loader fullscreen color="text-[#4318F0]" />
           </div>
         ) : !user ? null : isEmpty ? (
           <ScoreboardEmptyState />

@@ -66,8 +66,8 @@ function CodeBlockWrapper({ children, isDark = true }: { children: React.ReactNo
             onClick={handleCopy}
             className={`p-1.5 rounded transition-colors ${
               isDark
-                ? 'bg-gray-800 hover:bg-gray-700 text-orange-300'
-                : 'bg-gray-200 hover:bg-gray-300 text-orange-600'
+                ? 'bg-gray-800 hover:bg-gray-700 text-[#27A6F5]/60'
+                : 'bg-gray-200 hover:bg-gray-300 text-[#4318F0]'
             }`}
             title={copied ? 'Copied!' : 'Copy'}
           >
@@ -78,8 +78,8 @@ function CodeBlockWrapper({ children, isDark = true }: { children: React.ReactNo
             onClick={() => setIsWrapped(!isWrapped)}
             className={`p-1.5 rounded transition-colors ${
               isDark
-                ? 'bg-gray-800 hover:bg-gray-700 text-orange-300'
-                : 'bg-gray-200 hover:bg-gray-300 text-orange-600'
+                ? 'bg-gray-800 hover:bg-gray-700 text-[#27A6F5]/60'
+                : 'bg-gray-200 hover:bg-gray-300 text-[#4318F0]'
             }`}
             title={isWrapped ? 'Horizontal scroll' : 'Wrap text'}
           >
@@ -133,8 +133,8 @@ function BlockquoteWrapper({ children, isDark = true }: { children: React.ReactN
             onClick={handleCopy}
             className={`p-1.5 rounded transition-colors ${
               isDark
-                ? 'bg-gray-800 hover:bg-gray-700 text-orange-300'
-                : 'bg-orange-100 hover:bg-orange-200 text-orange-600'
+                ? 'bg-gray-800 hover:bg-gray-700 text-[#27A6F5]/60'
+                : 'bg-[#27A6F5]/15 hover:bg-[#27A6F5]/25 text-[#4318F0]'
             }`}
             title={copied ? 'Copied!' : 'Copy'}
           >
@@ -145,8 +145,8 @@ function BlockquoteWrapper({ children, isDark = true }: { children: React.ReactN
             onClick={() => setIsWrapped(!isWrapped)}
             className={`p-1.5 rounded transition-colors ${
               isDark
-                ? 'bg-gray-800 hover:bg-gray-700 text-orange-300'
-                : 'bg-orange-100 hover:bg-orange-200 text-orange-600'
+                ? 'bg-gray-800 hover:bg-gray-700 text-[#27A6F5]/60'
+                : 'bg-[#27A6F5]/15 hover:bg-[#27A6F5]/25 text-[#4318F0]'
             }`}
             title={isWrapped ? 'Horizontal scroll' : 'Wrap text'}
           >
@@ -175,16 +175,16 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkBreaks]}
         components={{
-          h1: ({...props}) => <h1 className="text-3xl font-extrabold mt-6 mb-3 text-orange-400 border-b border-gray-700 pb-2" {...props} />,
-          h2: ({...props}) => <h2 className="text-2xl font-bold mt-5 mb-3 text-orange-300" {...props} />,
-          h3: ({...props}) => <h3 className="text-xl font-semibold mt-4 mb-2 text-orange-200" {...props} />,
+          h1: ({...props}) => <h1 className="text-3xl font-extrabold mt-6 mb-3 text-[#27A6F5] border-b border-gray-700 pb-2" {...props} />,
+          h2: ({...props}) => <h2 className="text-2xl font-bold mt-5 mb-3 text-[#27A6F5]/60" {...props} />,
+          h3: ({...props}) => <h3 className="text-xl font-semibold mt-4 mb-2 text-[#27A6F5]/25" {...props} />,
           p: ({...props}) => <p className="mb-3 leading-relaxed text-justify" {...props} />,
           ul: ({...props}) => <ul className="mb-3 space-y-1" {...props} />,
           ol: ({...props}) => <ol className="mb-3 space-y-1" {...props} />,
           li: ({...props}) => <li className="ml-6 list-item" {...props} />,
           code: ({inline, children, ...props}: any) =>
             inline ? (
-              <code className="bg-gray-800 px-2 py-1 rounded text-xs font-mono text-orange-300 break-all max-w-full break-words" {...props}>
+              <code className="bg-gray-800 px-2 py-1 rounded text-xs font-mono text-[#27A6F5]/60 break-all max-w-full break-words" {...props}>
                 {children}
               </code>
             ) : (
@@ -194,11 +194,11 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
                 </pre>
               </CodeBlockWrapper>
             ),
-          a: ({...props}) => <a className="text-orange-400 hover:text-orange-300 hover:underline underline font-medium transition-colors" target="_blank" rel="noopener noreferrer" {...props} />,
+          a: ({...props}) => <a className="text-[#27A6F5] hover:text-[#27A6F5]/60 hover:underline underline font-medium transition-colors" target="_blank" rel="noopener noreferrer" {...props} />,
           blockquote: ({...props}) => (
             <BlockquoteWrapper isDark>
               <blockquote
-                className="border-l-4 border-orange-400 pl-4 italic text-gray-300 bg-gray-800/50 rounded-md my-3"
+                className="border-l-4 border-[#27A6F5] pl-4 italic text-gray-300 bg-gray-800/50 rounded-md my-3"
                 {...props}
               />
             </BlockquoteWrapper>
@@ -227,12 +227,12 @@ export function RulesMarkdownRenderer({ content, className = '' }: MarkdownRende
         components={{
           p: ({...props}) => <p className="mb-2 leading-relaxed" {...props} />,
           li: ({...props}) => <li className="ml-6 list-disc mb-1" {...props} />,
-          strong: ({...props}) => <strong className="font-bold text-gray-900 dark:text-orange-400" {...props} />,
+          strong: ({...props}) => <strong className="font-bold text-gray-900 dark:text-[#27A6F5]" {...props} />,
           em: ({...props}) => <em className="italic text-gray-700 dark:text-gray-300" {...props} />,
-          a: ({...props}) => <a className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 underline font-medium transition-colors" target="_blank" rel="noopener noreferrer" {...props} />,
+          a: ({...props}) => <a className="text-[#4318F0] dark:text-[#27A6F5] hover:text-[#4318F0] dark:hover:text-[#27A6F5]/60 underline font-medium transition-colors" target="_blank" rel="noopener noreferrer" {...props} />,
           code: ({inline, children, ...props}: any) =>
             inline ? (
-              <code className="bg-orange-100 dark:bg-gray-800 px-2 py-1 rounded text-xs font-mono text-orange-800 dark:text-orange-300 font-semibold" {...props}>
+              <code className="bg-[#27A6F5]/15 dark:bg-gray-800 px-2 py-1 rounded text-xs font-mono text-[#4318F0]/80 dark:text-[#27A6F5]/60 font-semibold" {...props}>
                 {children}
               </code>
             ) : (

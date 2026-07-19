@@ -84,7 +84,7 @@ export default function RegisterPage() {
 
   // if still checking auth from context → show loader
   if (authLoading) {
-    return <Loader fullscreen color="text-orange-500" />
+    return <Loader fullscreen color="text-[#4318F0]" />
   }
 
   return (

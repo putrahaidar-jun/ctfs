@@ -40,7 +40,7 @@ export default function NotificationList({ tabType = 'challenges' }: { tabType?:
     ? notifications.filter(n => n.notif_type === 'first_blood' || n.notif_type === 'new_challenge')
     : notifications.filter(n => n.notif_type === 'solve');
 
-  if (loading) return <Loader fullscreen color="text-orange-500" />;
+  if (loading) return <Loader fullscreen color="text-[#4318F0]" />;
 
   if (filteredNotifications.length === 0)
     return (

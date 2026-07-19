@@ -46,22 +46,22 @@ const RULES = [
 
 export default function RulesPage() {
   const { loading } = require("@/contexts/AuthContext").useAuth();
-  if (loading) return <Loader fullscreen color="text-orange-500" />
+  if (loading) return <Loader fullscreen color="text-[#4318F0]" />
 
   return (
     <div className="flex flex-col min-h-[calc(100lvh-60px)] bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
       {/* Decorative background shapes */}
-      <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-orange-100 dark:bg-orange-900 rounded-full blur-3xl opacity-40 animate-pulse" />
-      <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-orange-200 dark:bg-orange-800 rounded-full blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-[#27A6F5]/15 dark:bg-[#4318F0]/90 rounded-full blur-3xl opacity-40 animate-pulse" />
+      <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-[#27A6F5]/25 dark:bg-[#4318F0]/80 rounded-full blur-3xl opacity-30 animate-pulse" />
 
      <section className="flex flex-col items-center justify-start pt-8 md:pt-12 flex-1 text-center px-4 relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-3xl md:text-4xl font-extrabold text-orange-600 dark:text-orange-400 mb-2 drop-shadow flex items-center justify-center gap-2"
+          className="text-3xl md:text-4xl font-extrabold text-[#4318F0] dark:text-[#27A6F5] mb-2 drop-shadow flex items-center justify-center gap-2"
         >
-          <BookOpen size={32} className="text-orange-500 dark:text-orange-300 drop-shadow mr-1" /> Rules {APP.shortName}
+          <BookOpen size={32} className="text-[#4318F0] dark:text-[#27A6F5]/60 drop-shadow mr-1" /> Rules {APP.shortName}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -94,17 +94,17 @@ export default function RulesPage() {
               className={`group flex gap-3 items-start bg-white/90 dark:bg-gray-800/90
                           border border-transparent dark:border-transparent rounded-md
                           px-4 py-3 shadow-sm text-sm md:text-base text-left w-full
-                          hover:shadow-lg hover:border-orange-400 dark:hover:border-orange-700
-                          hover:bg-orange-100 dark:hover:bg-gray-800/70
+                          hover:shadow-lg hover:border-[#27A6F5] dark:hover:border-[#4318F0]
+                          hover:bg-[#27A6F5]/15 dark:hover:bg-gray-800/70
                           transition-all duration-200 ease-out
                           ${idx < RULES.length - 1 ? 'mb-2' : ''}`}
             >
               <div className="flex-shrink-0 mt-1">
-                <div className="w-3 h-3 rounded-full bg-orange-600 dark:bg-orange-500
+                <div className="w-3 h-3 rounded-full bg-[#4318F0] dark:bg-[#4318F0]
                                 group-hover:scale-125 transition-transform duration-300" />
               </div>
               <div className="flex-1">
-                <div className="font-semibold text-orange-700 dark:text-orange-400 group-hover:text-orange-600 dark:group-hover:text-orange-300 transition-colors duration-300">
+                <div className="font-semibold text-[#4318F0] dark:text-[#27A6F5] group-hover:text-[#4318F0] dark:group-hover:text-[#27A6F5]/60 transition-colors duration-300">
                   {rule.title}
                 </div>
                 <div className="text-gray-700 dark:text-gray-200 leading-snug mt-1">
@@ -121,7 +121,7 @@ export default function RulesPage() {
         </p>
 
         <div className="w-full max-w-3xl mt-2 flex justify-center">
-          <Button asChild className="bg-orange-600 text-white hover:bg-orange-700 px-4 py-2 rounded-lg shadow text-sm">
+          <Button asChild className="bg-[#4318F0] text-white hover:bg-[#4318F0] px-4 py-2 rounded-lg shadow text-sm">
             <a href="/">Back to Home</a>
           </Button>
         </div>

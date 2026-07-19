@@ -29,7 +29,7 @@ export default function NotificationPage() {
   if (authLoading) {
     return (
       <div className="flex justify-center py-16">
-        <Loader fullscreen color="text-orange-500" />
+        <Loader fullscreen color="text-[#4318F0]" />
       </div>
     );
   }
@@ -55,7 +55,7 @@ export default function NotificationPage() {
         </button>
       </div>
 
-      <Suspense fallback={<Loader fullscreen color="text-orange-500" />}>
+      <Suspense fallback={<Loader fullscreen color="text-[#4318F0]" />}>
         <NotificationList tabType={tabType} />
       </Suspense>
     </main>

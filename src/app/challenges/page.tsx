@@ -268,13 +268,13 @@ export default function ChallengesPage() {
     }
   }
 
-  if (loading) return <Loader fullscreen color="text-orange-500" />
+  if (loading) return <Loader fullscreen color="text-[#4318F0]" />
   // Jangan render apapun jika belum login, biar redirect jalan
   if (!user) return null
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-        <TitlePage icon={<Flag size={30} className="text-orange-500 dark:text-orange-300 drop-shadow" />}>challenges</TitlePage>
+        <TitlePage icon={<Flag size={30} className="text-[#4318F0] dark:text-[#27A6F5]/60 drop-shadow" />}>challenges</TitlePage>
 
         <ChallengeFilterBar
           filters={filters}
@@ -288,7 +288,7 @@ export default function ChallengesPage() {
         {/* Challenges Grid Grouped by Category */}
         <div>
           {!user || loading ? (
-            <Loader fullscreen color="text-orange-500" />
+            <Loader fullscreen color="text-[#4318F0]" />
           ) : filteredChallenges.length === 0 ? (
             <div className="text-center py-16">
               <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -311,7 +311,7 @@ export default function ChallengesPage() {
             orderedKeys.map((category) => (
               <div key={category} className="mb-12">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-orange-400 dark:text-orange-300 text-2xl">{'»'}</span>
+                  <span className="text-[#27A6F5] dark:text-[#27A6F5]/60 text-2xl">{'»'}</span>
                   <h2 className="text-xl sm:text-2xl tracking-widest font-bold uppercase text-gray-800 dark:text-white">{category}</h2>
                 </div>
                 <motion.div

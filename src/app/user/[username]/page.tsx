@@ -56,7 +56,7 @@ export default function UserProfilePage() {
 
   // Tunggu authContext
   if (authLoading) {
-    return <Loader fullscreen color="text-orange-500" />
+    return <Loader fullscreen color="text-[#4318F0]" />
   }
 
   // ❌ JANGAN redirect login di profile publik
@@ -66,7 +66,7 @@ export default function UserProfilePage() {
   // }
 
   if (loading) {
-    return <Loader fullscreen color="text-orange-500" />
+    return <Loader fullscreen color="text-[#4318F0]" />
   }
 
   if (error) {

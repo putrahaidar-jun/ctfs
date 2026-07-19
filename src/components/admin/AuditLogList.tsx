@@ -278,7 +278,7 @@ const filteredLogs = React.useMemo(() => {
           <CardTitle className="text-lg font-semibold">Recent Audit Logs</CardTitle>
         </CardHeader>
         <CardContent className="flex justify-center py-8">
-          <Loader color="text-orange-500" />
+          <Loader color="text-[#4318F0]" />
         </CardContent>
       </Card>
     )

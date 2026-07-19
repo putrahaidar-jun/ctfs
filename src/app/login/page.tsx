@@ -49,7 +49,7 @@ export default function LoginPage() {
 
   // show loader while checking auth session
   if (authLoading) {
-    return <Loader fullscreen color="text-orange-500" />
+    return <Loader fullscreen color="text-[#4318F0]" />
   }
 
   return (

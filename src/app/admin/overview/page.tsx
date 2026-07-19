@@ -55,7 +55,7 @@ export default function AdminOverviewPage() {
     return () => { mounted = false }
   }, [user, loading, router])
 
-  if (loading) return <Loader fullscreen color="text-orange-500" />
+  if (loading) return <Loader fullscreen color="text-[#4318F0]" />
   if (!user) return null
 
   return (

@@ -95,7 +95,7 @@ export default function AdminSolversPage() {
     }
   }
 
-  if (loading) return <Loader fullscreen color="text-orange-500" />
+  if (loading) return <Loader fullscreen color="text-[#4318F0]" />
   if (!user || !isAdminUser) return null
 
   return (
