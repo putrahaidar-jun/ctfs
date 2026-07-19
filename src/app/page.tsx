@@ -12,14 +12,14 @@ export default function Home() {
   const { user, loading } = require("@/contexts/AuthContext").useAuth();
 
   if (loading) {
-    return <Loader fullscreen color="text-orange-500" />
+    return <Loader fullscreen color="text-[#4318F0] dark:text-[#27A6F5]" />
   }
 
   return (
     <div className="flex flex-col min-h-[calc(100lvh-60px)] bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
       {/* Global Decorative background shapes */}
-      <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-orange-100 dark:bg-orange-900 rounded-full blur-3xl opacity-40 animate-pulse" />
-      <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-orange-200 dark:bg-orange-800 rounded-full blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-[#27A6F5]/20 dark:bg-[#4318F0]/30 rounded-full blur-3xl opacity-40 animate-pulse" />
+      <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-[#4318F0]/20 dark:bg-[#27A6F5]/20 rounded-full blur-3xl opacity-30 animate-pulse" />
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center flex-1 text-center px-6 relative z-10">
@@ -27,13 +27,13 @@ export default function Home() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-5xl md:text-6xl font-extrabold text-orange-600 dark:text-orange-400 mb-4 drop-shadow-lg"
+          className="text-5xl md:text-6xl font-extrabold text-[#4318F0] dark:text-[#27A6F5] mb-4 drop-shadow-lg"
         >
           Welcome to{" "}
-          <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#27A6F5] to-[#4318F0] bg-clip-text text-transparent">
             {APP.fullName}
           </span>{" "}
-          <Flag size={50} className="inline-block text-orange-500 dark:text-orange-300 drop-shadow" />
+          <Flag size={50} className="inline-block text-[#4318F0] dark:text-[#27A6F5] drop-shadow" />
 
         </motion.h1>
         <motion.p
@@ -43,15 +43,15 @@ export default function Home() {
           className="text-lg md:text-xl text-gray-700 dark:text-gray-200 max-w-2xl mb-8"
         >
           Practice your{" "}
-          <span className="font-semibold text-orange-600 dark:text-orange-400">
+          <span className="font-semibold text-[#4318F0] dark:text-[#27A6F5]">
             cybersecurity skills
           </span>{" "}
           through{" "}
-          <span className="font-semibold text-orange-600 dark:text-orange-400">
+          <span className="font-semibold text-[#4318F0] dark:text-[#27A6F5]">
             Jeopardy-style Capture The Flag (CTF)
           </span>{" "}
           challenges — solve chall, collect flags, and climb the{" "}
-          <span className="font-semibold text-orange-600 dark:text-orange-400">
+          <span className="font-semibold text-[#4318F0] dark:text-[#27A6F5]">
             leaderboard
           </span>
           {/* . Join our{" "}
@@ -59,7 +59,7 @@ export default function Home() {
             href={APP.links.discord}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-orange-600 dark:text-orange-400 hover:underline"
+            className="font-semibold text-[#4318F0] dark:text-[#27A6F5] hover:underline"
           >
             Discord community
           </a>{" "}
@@ -73,7 +73,7 @@ export default function Home() {
           transition={{ delay: 0.5, duration: 0.4 }}
           className="mb-8 flex items-center justify-center"
         >
-          <div className="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 border border-orange-200 dark:border-orange-700 rounded-lg px-4 py-2 shadow-md text-base md:text-lg font-mono text-orange-600 dark:text-orange-400">
+          <div className="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 border border-[#27A6F5]/40 dark:border-[#4318F0]/50 rounded-lg px-4 py-2 shadow-md text-base md:text-lg font-mono text-[#4318F0] dark:text-[#27A6F5]">
             <span className="font-bold">Flag format:</span>
             <span className="select-all">{APP.flagFormat}</span>
           </div>
@@ -85,14 +85,14 @@ export default function Home() {
             <>
               <Button
                 asChild
-                className="bg-orange-600 text-white hover:bg-orange-700 px-6 py-3 rounded-xl shadow-lg"
+                className="bg-[#4318F0] text-white hover:bg-[#27A6F5] px-6 py-3 rounded-xl shadow-lg"
               >
                 <Link href="/challenges">Start Challenges</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="px-4 py-3 rounded-xl border-orange-600 text-orange-600 hover:bg-orange-50 shadow-lg"
+                className="px-4 py-3 rounded-xl border-[#4318F0] text-[#4318F0] hover:bg-[#27A6F5]/10 shadow-lg"
               >
                 <Link href="/rules">Rules</Link>
               </Button>
@@ -101,14 +101,14 @@ export default function Home() {
             <>
               <Button
                 asChild
-                className="bg-orange-600 text-white hover:bg-orange-700 px-6 py-3 rounded-xl shadow-lg"
+                className="bg-[#4318F0] text-white hover:bg-[#27A6F5] px-6 py-3 rounded-xl shadow-lg"
               >
                 <Link href="/login">Login</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="px-6 py-3 rounded-xl border-orange-600 text-orange-600 hover:bg-orange-50 shadow-lg"
+                className="px-6 py-3 rounded-xl border-[#4318F0] text-[#4318F0] hover:bg-[#27A6F5]/10 shadow-lg"
               >
                 <Link href="/register">Register</Link>
               </Button>
@@ -127,7 +127,7 @@ export default function Home() {
               href="https://nextjs.org/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 font-semibold hover:underline"
+              className="text-[#4318F0] dark:text-[#27A6F5] font-semibold hover:underline"
             >
               Next.js
             </a>
@@ -136,7 +136,7 @@ export default function Home() {
               href="https://tailwindcss.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 font-semibold hover:underline"
+              className="text-[#4318F0] dark:text-[#27A6F5] font-semibold hover:underline"
             >
               TailwindCSS
             </a>
@@ -145,7 +145,7 @@ export default function Home() {
               href="https://www.framer.com/motion/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 font-semibold hover:underline"
+              className="text-[#4318F0] dark:text-[#27A6F5] font-semibold hover:underline"
             >
               Framer Motion
             </a>
@@ -154,7 +154,7 @@ export default function Home() {
               href="https://supabase.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 font-semibold hover:underline"
+              className="text-[#4318F0] dark:text-[#27A6F5] font-semibold hover:underline"
             >
               Supabase
             </a>{" "}
@@ -163,7 +163,7 @@ export default function Home() {
               href="https://vercel.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 font-semibold hover:underline"
+              className="text-[#4318F0] dark:text-[#27A6F5] font-semibold hover:underline"
             >
               Vercel
             </a>
@@ -172,7 +172,7 @@ export default function Home() {
           <p className="mt-1">
             Source code available on{" "}
             <a
-              className="text-orange-500 font-semibold hover:underline"
+              className="text-[#4318F0] dark:text-[#27A6F5] font-semibold hover:underline"
               href={APP.links.github}
               target="_blank"
               rel="noopener noreferrer"
