@@ -30,26 +30,9 @@ function DiscordIcon({
   );
 }
 
+// 1. Username profil GitHub kamu untuk Running Text / Marquee
 const CONTRIBUTORS = [
-  "@ariafatah0711",
-  // "@GZTimeWalker",
-  // "@hez2010",
-  // "@GrakePch",
-  //   "@Hanmur",
-  //   "@KPwnZ",
-  //   "@kengwang",
-  //   "@idawnlight",
-  //   "@Konano",
-  //   "@YanWQ-monad",
-  //   "@Ad-Bean",
-  //   "@Reverier-Xu",
-  //   "@TonyCrane",
-  //   "@mcyydscc",
-  //   "@cyc4188",
-  //   "@Zeroc0077",
-  //   "@weyung",
-  //   "@happybear1234",
-  //   "@xfoxfu",
+  "@putrahaidar-jun",
 ];
 
 function fillContributors(list: string[], minLength = 14) {
@@ -67,8 +50,11 @@ function fillContributors(list: string[], minLength = 14) {
 }
 const filledContributors = fillContributors(CONTRIBUTORS, 14);
 
+// 2. Link Repositori GitHub kamu
+const REPO_URL = APP.links?.github || "https://github.com/putrahaidar-jun/ctfs";
+
 const LINKS = [
-  { name: "GitHub", href: APP.links?.github || "#" },
+  { name: "GitHub", href: REPO_URL },
   { name: "Docs", href: APP.links?.docs || "#" },
   { name: "Discord", href: APP.links?.discord || "#" },
 ];
@@ -78,10 +64,10 @@ export default function InfoPage() {
   const { loading } = require("@/contexts/AuthContext").useAuth();
 
   useEffect(() => {
-    const repoUrl = APP.links?.github
+    const repoUrl = REPO_URL
     if (!repoUrl) return
     try {
-      // extract owner/repo from URL like https://github.com/owner/repo
+      // Mengambil owner dan repo dari URL (putrahaidar-jun/ctfs)
       const m = repoUrl.match(/github\.com\/(.+?)\/(.+?)(?:\.git|\/|$)/i)
       if (!m) return
       const owner = m[1]
@@ -216,10 +202,10 @@ export default function InfoPage() {
             </div>
             {repoStats && (
               <div className="flex items-center gap-2 text-xs text-gray-500">
-                <a href={APP.links.github} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-[#4318F0]">
+                <a href={REPO_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-[#4318F0]">
                   <Star size={14} className="text-yellow-500" /> {repoStats.stars}
                 </a>
-                <a href={APP.links.github} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-[#4318F0]">
+                <a href={REPO_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-[#4318F0]">
                   <GitBranch size={14} className="text-gray-500" /> {repoStats.forks}
                 </a>
               </div>
@@ -227,13 +213,13 @@ export default function InfoPage() {
           </div>
           <div className="text-xs font-mono text-gray-500 flex items-center gap-1 mt-1">
             <ScrollText size={15} className="mr-1" />
-            <span>Licensed under <a href={`${APP.links.github}/blob/main/LICENSE` || "https://www.apache.org/licenses/LICENSE-2.0"} target="_blank" rel="noopener" className="underline hover:text-[#4318F0]">Apache 2.0</a></span>
+            <span>Licensed under <a href={`${REPO_URL}/blob/main/LICENSE`} target="_blank" rel="noopener" className="underline hover:text-[#4318F0]">Apache 2.0</a></span>
           </div>
 
           {/* Change Log */}
           <div className="text-xs font-mono text-gray-500 flex items-center gap-1 mt-1">
             <ListOrdered size={15} className="mr-1" />
-            <span>See the <a href={`${APP.links.github}/blob/main/CHANGELOG.md` || '#'} target="_blank" rel="noopener" className="underline hover:text-[#4318F0]">Change Log</a></span>
+            <span>See the <a href={`${REPO_URL}/blob/main/CHANGELOG.md`} target="_blank" rel="noopener" className="underline hover:text-[#4318F0]">Change Log</a></span>
           </div>
         </div>
       </main>
