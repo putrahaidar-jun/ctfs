@@ -33,6 +33,7 @@ function DiscordIcon({
 // 1. Username profil GitHub kamu untuk Running Text / Marquee
 const CONTRIBUTORS = [
   "@putrahaidar-jun",
+  "@Zhasta",
 ];
 
 function fillContributors(list: string[], minLength = 14) {
